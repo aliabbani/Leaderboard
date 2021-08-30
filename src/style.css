@@ -1,7 +1,40 @@
 body {
-  background-color: bisque;
+  background-color: white;
 }
 
-.hello {
-  color: yellow;
+.Leaderboard {
+  font-size: 60px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent {
+  display: flex;
+  flex-direction: row;
+}
+
+.two,
+.four,
+.six {
+  background-color: silver;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.right-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
 }
