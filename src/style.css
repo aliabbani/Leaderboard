@@ -1,5 +1,6 @@
 body {
   background-color: white;
+  padding: 5vh 5vw;
 }
 
 .Leaderboard {
@@ -9,16 +10,29 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
+  padding: 0 10vw;
+  gap: 5vw;
 }
 
 .left {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .recent {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.refresh {
+  height: 4vh;
+}
+
+.table {
+  border :solid black;
 }
 
 .two,
@@ -30,11 +44,17 @@ body {
 .right {
   display: flex;
   flex-direction: column;
-  gap: 5vh;
+  width: 50%;
+  gap: 2vh;
 }
 
 .right-inputs {
   display: flex;
   flex-direction: column;
   gap: 2vh;
+}
+
+.submit {
+  width: 10vw;
+  align-self: flex-end;
 }
