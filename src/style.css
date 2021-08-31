@@ -1,10 +1,12 @@
 body {
   background-color: white;
-  padding: 5vh 5vw;
+  padding: 5vh 0;
+  font-family: sans-serif, 'Times New Roman', Times, serif;
 }
 
 .Leaderboard {
   font-size: 60px;
+  padding-left: 3vw;
 }
 
 .container {
@@ -14,10 +16,12 @@ body {
   gap: 5vw;
 }
 
-.left {
+.left,
+.right {
   display: flex;
   flex-direction: column;
   width: 50%;
+  gap: 2vh;
 }
 
 .recent {
@@ -32,20 +36,15 @@ body {
 }
 
 .table {
-  border :solid black;
+  border: 1px solid black;
 }
 
-.two,
-.four,
-.six {
+.table div:nth-child(even) {
   background-color: silver;
 }
 
-.right {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  gap: 2vh;
+.list {
+  padding-left: 1vw;
 }
 
 .right-inputs {
@@ -55,6 +54,6 @@ body {
 }
 
 .submit {
-  width: 10vw;
+  width: 70px;
   align-self: flex-end;
 }
