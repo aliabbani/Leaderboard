@@ -28,9 +28,6 @@ const results = [
 ];
 
 const table = document.querySelector('.table');
-const yourName = document.getElementById('yourName');
-const yourScore = document.getElementById('yourScore');
-const submit = document.getElementsByClassName('submit');
 
 function generateResult() {
   results.forEach((result) => {
