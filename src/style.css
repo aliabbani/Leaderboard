@@ -1,0 +1,59 @@
+body {
+  background-color: white;
+  padding: 5vh 0;
+  font-family: sans-serif, 'Times New Roman', Times, serif;
+}
+
+.Leaderboard {
+  font-size: 60px;
+  padding-left: 3vw;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10vw;
+  gap: 5vw;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 2vh;
+}
+
+.recent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.refresh {
+  height: 4vh;
+}
+
+.table {
+  border: 1px solid black;
+}
+
+.table div:nth-child(even) {
+  background-color: silver;
+}
+
+.list {
+  padding-left: 1vw;
+}
+
+.right-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.submit {
+  width: 70px;
+  align-self: flex-end;
+}
