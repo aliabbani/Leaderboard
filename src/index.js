@@ -1,38 +1,17 @@
 import './style.css';
+// import getScores from './getApi.js';
 
-const results = [
-  {
-    name: 'Ali',
-    score: '100',
-  },
-  {
-    name: 'Henry',
-    score: '100',
-  },
-  {
-    name: 'Elyor',
-    score: '100',
-  },
-  {
-    name: 'Zeenat',
-    score: '100',
-  },
-  {
-    name: 'Faizii',
-    score: '100',
-  },
-  {
-    name: 'Elmar',
-    score: '100',
-  },
-];
+let results = [];
 
 const table = document.querySelector('.table');
 
-function generateResult() {
+function generateResult(results) {
+  const eleChildren = Array.from(document.querySelectorAll('.table div'));
+  eleChildren.forEach((el) => {
+    el.remove();
+  });
   results.forEach((result) => {
-    table.innerHtml = '';
-    const content = `${result.name}: ${result.score}`;
+    const content = `${result.user}: ${result.score}`;
 
     const list = document.createElement('div');
     list.className = 'list';
@@ -42,4 +21,49 @@ function generateResult() {
   });
 }
 
-generateResult();
+// generateResult(results);
+// alert(getScores);
+
+// send scores
+const sendScores = async () => {
+  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/uwJ01ZLnBAIiUKyNJXTe/scores/';
+  const yourName = document.getElementById('yourName');
+  const user = yourName.value;
+  const yourScore = document.getElementById('yourScore');
+  const score = yourScore.value;
+  const response = await (await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      user,
+      score,
+    }),
+  })).json();
+  yourName.value = '';
+  yourScore.value = '';
+  return response;
+};
+
+// get scores
+const getScores = async () => {
+  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/uwJ01ZLnBAIiUKyNJXTe/scores/';
+  const response = await (await fetch(url)).json();
+  results = response.result;
+  generateResult(results);
+};
+
+getScores();
+
+const refresh = document.querySelector('.refresh');
+const submit = document.querySelector('.submit');
+
+submit.addEventListener('click', () => {
+  sendScores();
+});
+
+refresh.addEventListener('click', () => {
+  document.querySelector('.table').innerHtml = '';
+  getScores();
+});
