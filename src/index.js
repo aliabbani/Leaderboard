@@ -9,7 +9,7 @@ const yourScore = document.getElementById('yourScore');
 const refresh = document.querySelector('.refresh');
 const submit = document.querySelector('.submit');
 
-function generateResult(results) {
+const generateResult = (results) => {
   const eleChildren = Array.from(document.querySelectorAll('.table div'));
   eleChildren.forEach((el) => {
     el.remove();
@@ -23,7 +23,7 @@ function generateResult(results) {
 
     table.appendChild(list);
   });
-}
+};
 
 const sendScores = async () => {
   const response = await (await fetch(url, {
