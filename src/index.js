@@ -3,6 +3,11 @@ import './style.css';
 let results = [];
 
 const table = document.querySelector('.table');
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/uwJ01ZLnBAIiUKyNJXTe/scores/';
+const yourName = document.getElementById('yourName');
+const yourScore = document.getElementById('yourScore');
+const refresh = document.querySelector('.refresh');
+const submit = document.querySelector('.submit');
 
 function generateResult(results) {
   const eleChildren = Array.from(document.querySelectorAll('.table div'));
@@ -21,19 +26,14 @@ function generateResult(results) {
 }
 
 const sendScores = async () => {
-  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/uwJ01ZLnBAIiUKyNJXTe/scores/';
-  const yourName = document.getElementById('yourName');
-  const user = yourName.value;
-  const yourScore = document.getElementById('yourScore');
-  const score = yourScore.value;
   const response = await (await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      user,
-      score,
+      user: yourName.value,
+      score: yourScore.value,
     }),
   })).json();
   yourName.value = '';
@@ -42,16 +42,12 @@ const sendScores = async () => {
 };
 
 const getScores = async () => {
-  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/uwJ01ZLnBAIiUKyNJXTe/scores/';
   const response = await (await fetch(url)).json();
   results = response.result;
   generateResult(results);
 };
 
 getScores();
-
-const refresh = document.querySelector('.refresh');
-const submit = document.querySelector('.submit');
 
 submit.addEventListener('click', () => {
   sendScores();
