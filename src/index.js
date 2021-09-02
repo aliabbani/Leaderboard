@@ -1,5 +1,4 @@
 import './style.css';
-// import getScores from './getApi.js';
 
 let results = [];
 
@@ -21,10 +20,6 @@ function generateResult(results) {
   });
 }
 
-// generateResult(results);
-// alert(getScores);
-
-// send scores
 const sendScores = async () => {
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/uwJ01ZLnBAIiUKyNJXTe/scores/';
   const yourName = document.getElementById('yourName');
@@ -46,7 +41,6 @@ const sendScores = async () => {
   return response;
 };
 
-// get scores
 const getScores = async () => {
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/uwJ01ZLnBAIiUKyNJXTe/scores/';
   const response = await (await fetch(url)).json();
