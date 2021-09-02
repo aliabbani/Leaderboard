@@ -15,7 +15,7 @@ The leaderboard website displays scores submitted by different players. It also 
 
 ## Live Demo
 
-[Live Demo Link](https://modest-ptolemy-3e81f3.netlify.app/)
+[Live Demo Link](https://keen-hermann-3978d3.netlify.app/)
 
 
 ## Getting Started
