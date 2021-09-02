@@ -3,7 +3,7 @@
 
 > Building A Leaderboard scores App
 
-![screenshot](./src/images/00screenshot.PNG)
+![screenshot](./src/images/Capture.PNG)
 
 The leaderboard website displays scores submitted by different players. It also allows you to submit your score.
 
@@ -21,20 +21,29 @@ The leaderboard website displays scores submitted by different players. It also 
 ## Getting Started
 
 
-To get a local copy up and running follow these simple example steps.
+### To get a local copy up and running follow these simple example steps.
 
-Clone the repo with `git clone git@github.com:aliabbani/Leaderboard.git`
+- Clone the repo with `git clone git@github.com:aliabbani/Leaderboard.git`
+- Open your terminal or command line
+- Run `git clone` and paste the link
+- Open the folder with your code editor
+- Create a branch to work on
+- Run `npm install`
+- Run `npm run build`
+- Run `npm run start` to launch the server.
 
-Run `npm install` from the command line
 
-Run `npx hint .` to test for html linting check
+### You can view the app using the 'live demo' above.
+### To create your own game ID with this API (Using Postman App)
 
-Run `npx stylelint "**/*.{css,scss}"` to test for css linting check 
-
-Run `npx eslint hint .` to test for JS linting check
-
-
-The app is deployed using GitHub pages. You can view it using the 'live demo' above.
+- Open your `Postman` App
+- Enter this URL `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/`
+- Change the action to POST
+- Go to the Body tab, select raw and JSON as the format
+- Paste this in the body field `{"name": "Your game name"}`
+- Click send and you should get a result with the unique identifier e.g. `r9EiHY1wXBgG0IWX06By`
+- Open the `index.js` file and replace the ID in the URL variable with your ID
+- Save the file and launch the server, your recent scores list should be empty
 
 
 
