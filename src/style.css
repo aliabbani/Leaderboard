@@ -25,7 +25,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 7vw;
+  padding: 0 10vw;
   gap: 5vw;
 }
 
@@ -64,7 +64,7 @@ header {
 
 .table div:nth-child(even) {
   background-color: #fef07e;
-  color: #746E39;
+  color: #746e39;
 }
 
 .table div:nth-child(odd) {
@@ -118,7 +118,14 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 10vw;
-    gap: 5vw;
+  }
+
+  .right {
+    height: 30vh;
+  }
+
+  .refresh,
+  .submit {
+    height: 6vh;
   }
 }
