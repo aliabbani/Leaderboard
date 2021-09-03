@@ -3,7 +3,7 @@ import './style.css';
 let results = [];
 
 const table = document.querySelector('.table');
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/uwJ01ZLnBAIiUKyNJXTe/scores/';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/r9EiHY1wXBgG0IWX06By/scores/';
 const yourName = document.getElementById('yourName');
 const yourScore = document.getElementById('yourScore');
 const refresh = document.querySelector('.refresh');
